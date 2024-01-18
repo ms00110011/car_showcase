@@ -41,7 +41,7 @@ return (
 
       <div className=" w-3/12 flex justify-around">
         <CustomButton
-          title={session.user!.name}
+          title={session.user!.name!} 
           btnType="button"
           containerStyles="text-white rounded-full bg-black min-w-[130px]"
         />
