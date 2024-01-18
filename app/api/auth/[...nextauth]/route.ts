@@ -14,8 +14,8 @@ const handler = NextAuth({
   callbacks: {
     async session({ session }) {
 
-      const sessionUser = await User.findOne({ email: session.user.email });
-      session.user.id = sessionUser._id.toString();
+      const sessionUser = await User.findOne({ email: session.user!.email });
+      session.user!.id = sessionUser._id.toString();
 
       return session
     },
@@ -28,7 +28,7 @@ const handler = NextAuth({
         if (userExists === null) {
           await User.create({
             email: profile?.email,
-            username: profile?.name.replace(/\s+/g, '').toLowerCase(),
+            username: profile?.name!.replace(/\s+/g, '').toLowerCase(),
             image: user.image
           })
         }
