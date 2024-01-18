@@ -2,8 +2,10 @@ import { Fragment } from "react";
 import Image from "next/image";
 
 import { Dialog, Transition } from "@headlessui/react";
+
 import { CarProps } from "@types";
 import { generateCarImageUrl } from "@utils";
+import { CustomButton } from "@components";
 
 interface CarDetailsProps {
   isOpen: boolean;
@@ -87,11 +89,15 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => (
                         </p>
                       </div>
                     ))}
+
+                     <CustomButton title="Book Now" containerStyles=" mt-5 bg-primary-blue w-full rounded-full" textStyles=" text-white font-medium" />
+
                   </div>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
+
         </div>
       </Dialog>
     </Transition>
