@@ -46,12 +46,12 @@ export async function fetchCars(filters: FilterProps) {
 
   // Set the required headers for the API request
   const headers: HeadersInit = {
-    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
+    "X-Api-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
   };
 
   // Set the required headers for the API request
   const response = await fetch(
-    `https://api.api-ninjas.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    `https://api.api-ninjas.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}`,
     {
       headers: headers,
     }
